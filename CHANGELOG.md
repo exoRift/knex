@@ -1,4 +1,82 @@
-# Master (Unreleased)
+# [Master (Unreleased)](https://github.com/knex/knex/compare/3.3.0...master)
+
+# 3.3.0 - 26 June, 2026
+
+### New features
+
+- feat: add support for returning in mariadb [#4572](https://github.com/knex/knex/pull/4572)
+- feat: mariadb driver support [#6415](https://github.com/knex/knex/pull/6415)
+- Fixes \_setNullableState not respecting schema [#6025](https://github.com/knex/knex/pull/6025)
+- feat: add connectionPool option for bringing an external pool [#6414](https://github.com/knex/knex/pull/6414)
+- Added knex.migrate.to and knex.migrate.before [#6420](https://github.com/knex/knex/pull/6420)
+- feat: set error.cause for tarn acquire connection error [#5681](https://github.com/knex/knex/pull/5681)
+
+### Bug fixes
+
+- Fix FOR UPDATE OF with explicit schema [#5791](https://github.com/knex/knex/pull/5791)
+- Fix sqlite conditional insert/merge when inserting multiple rows [#6185](https://github.com/knex/knex/pull/6185)
+- Fix: Stream postProcessResponse error is not catchable with .on('error') [#6033](https://github.com/knex/knex/pull/6033)
+- fix(pg): preserve updateFrom binding order [#6454](https://github.com/knex/knex/pull/6454)
+- fix: #6451, support token-credential in mssql auth [#6465](https://github.com/knex/knex/pull/6465)
+- fix(types): #6452 - .where type regression for invalid types [#6463](https://github.com/knex/knex/pull/6463)
+- fix: #6460 unhandled error on connection timeout with stream [#6462](https://github.com/knex/knex/pull/6462)
+- fix: #6455, correctly state tedious as dependency needed for mssql [#6464](https://github.com/knex/knex/pull/6464)
+- fix(pg,mssql): preserve binding order in delete and update queries [#6438](https://github.com/knex/knex/pull/6438)
+
+### Misc
+
+- chore: bump tarn@3.1.0 [#6492](https://github.com/knex/knex/pull/6492)
+- micro-optimization in wrappingFormatter [#6456](https://github.com/knex/knex/pull/6456)
+- cleanup flake in the cancellation tests [#6486](https://github.com/knex/knex/pull/6486)
+- Update docs: timeout section [#6471](https://github.com/knex/knex/pull/6471)
+- ci: make npm install resilient to transient network failures [#6468](https://github.com/knex/knex/pull/6468)
+- Update homepage urls [#6450](https://github.com/knex/knex/pull/6450)
+- chore: add mariadb to docker-compose [#6466](https://github.com/knex/knex/pull/6466)
+- chore: set codecov to default coverage provider [#6448](https://github.com/knex/knex/pull/6448)
+
+# 3.2.10 - 2 May, 2026
+
+### Bug fixes
+
+- fix: bump lodash to ^4.18.1, close #6433 [#6446](https://github.com/knex/knex/pull/6446)
+- Fix: Properly Escape Aliases in Analytic Functions [#6392](https://github.com/knex/knex/pull/6392)
+
+### Misc
+
+- chore: auto-update the docs' knex version on publish [#6447](https://github.com/knex/knex/pull/6447)
+- chore: skip re-running tests on automated release commit [#6443](https://github.com/knex/knex/pull/6443)
+- chore: sync docker images we use to ghcr [#6445](https://github.com/knex/knex/pull/6445)
+- chore: fixes for release-drafter workflow [#6442](https://github.com/knex/knex/pull/6442)
+- chore: new publish/release workflow [#6441](https://github.com/knex/knex/pull/6441)
+- docs: Update changelog for version 3.2.9 [#6440](https://github.com/knex/knex/pull/6440)
+- docs: sync website changelog from 3.0.0 to 3.2.8 [#6426](https://github.com/knex/knex/pull/6426)
+
+# 3.2.9 - 3 April, 2026
+
+### Bug fixes
+
+- fix: support DELETE... LIMIT in dialects that support it (mysql), but continue to disallow ones that don't [#6429](https://github.com/knex/knex/issues/6429)
+- fix(postgres): escape double quotes in searchPath to prevent SQL injection [#6411](https://github.com/knex/knex/issues/6411)
+- fix(sqlite): append RETURNING statement when insert empty row [#5471](https://github.com/knex/knex/issues/5471)
+- fix: add type support for `Array<Buffer>` [#6428](https://github.com/knex/knex/issues/6428)
+
+# 3.2.8 - 30 March, 2026
+
+### Bug fixes
+
+- Reverts the breaking changes added in [#6227](https://github.com/knex/knex/issues/6227). This means that the ESM import of Knex is reverted to `import { knex } from 'knex/knex.mjs` [#6422](https://github.com/knex/knex/issues/6422)
+- fix(types): allow a `QueryBuilder` type as a value in an `update` [#6419](https://github.com/knex/knex/issues/6419)
+
+# 3.2.7 - 27 March, 2026
+
+### Bug fixes
+
+- fix sqlite DDL operations failing inside transactions [#6408](https://github.com/knex/knex/issues/6408)
+- fix: handle lowercase INFORMATION_SCHEMA keys in MySQL renameColumn [#6407](https://github.com/knex/knex/issues/6407)
+- fix: clone config in client constructor [#5633](https://github.com/knex/knex/issues/5633)
+- fix: remove \_\_knexTxId from transaction connection on release [#5288](https://github.com/knex/knex/issues/5288)
+- fix: correct binding order in delete with subquery join [#6412](https://github.com/knex/knex/issues/6412)
+- chore: omit ./scripts from published package [#6356](https://github.com/knex/knex/issues/6356)
 
 # 3.2.6 - 24 March, 2026
 
